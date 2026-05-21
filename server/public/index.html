@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Today App</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f4f7fb;
+        color: #222;
+      }
+      .container {
+        max-width: 720px;
+        padding: 24px;
+        background: white;
+        border-radius: 14px;
+        box-shadow: 0 18px 45px rgba(15, 39, 76, 0.12);
+        text-align: center;
+      }
+      h1 {
+        margin-bottom: 12px;
+      }
+      p {
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Code Today App</h1>
+      <p>Right click, text copy, and developer tools shortcuts are disabled on this page.</p>
+      <p>If you need to access the API, use the endpoints directly.</p>
+    </div>
+    <script>
+      document.addEventListener('contextmenu', (event) => {
+        event.preventDefault();
+      });
+
+      document.addEventListener('copy', (event) => {
+        event.preventDefault();
+      });
+      document.addEventListener('cut', (event) => {
+        event.preventDefault();
+      });
+
+      document.addEventListener('keydown', (event) => {
+        const key = event.key.toUpperCase();
+
+        if (
+          key === 'F12' ||
+          (event.ctrlKey && event.shiftKey && ['I', 'J', 'C'].includes(key)) ||
+          (event.ctrlKey && key === 'U') ||
+          (event.ctrlKey && key === 'S') ||
+          (event.ctrlKey && key === 'P')
+        ) {
+          event.preventDefault();
+        }
+      });
+    </script>
+  </body>
+</html>
